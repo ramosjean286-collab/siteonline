@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JeanDesign - Projetos de Interiores</title>
+<meta name="description" content="JeanDesign - Criação de plantas digitais em 2D/3D e design de interiores profissional.">
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<style>
+:root{
+  --bg:#0f1724; --card:#0b1220; --accent:#7c3aed; --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.04); --radius:14px; --max:1100px;
+  color-scheme: dark; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background: linear-gradient(180deg,var(--bg),#071026); color:#e6eef8;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  padding:24px 16px; display:flex; justify-content:center; font-size:16px;
+}
+.wrap{width:100%;max-width:var(--max)}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4c1d95);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+.brand h1{margin:0;font-size:20px}
+.brand p{margin:0;color:var(--muted);font-size:13px}
+nav{display:flex;gap:12px;align-items:center}
+.btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center;margin-bottom:28px}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:28px;border-radius:var(--radius);backdrop-filter:blur(6px)}
+.hero h2{margin:0 0 8px;font-size:28px}
+.hero p{margin:0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:12px}
+.thumb{height:160px;border-radius:10px;background-size:cover;background-position:center;box-shadow:inset 0 -30px 60px rgba(0,0,0,0.45)}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-weight:800;color:var(--accent)}
+.specs{display:flex;gap:10px;color:var(--muted);font-size:13px}
+footer{margin-top:22px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid rgba(255,255,255,0.02)}
+.pill{padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-weight:600}
+.contact-form{display:flex;flex-direction:column;gap:8px}
+.contact-form input, .contact-form textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.contact-form button{padding:10px;border-radius:8px;border:none;background:var(--accent);color:white;font-weight:700}
+a:focus, button:focus, input:focus{outline:3px solid rgba(124,58,237,0.18);outline-offset:2px}
+
+/* Botão orçamento */
+.btn-orcamento {display:inline-block; padding:12px 20px; background:#22c55e; color:#fff; font-weight:bold; border-radius:8px; text-decoration:none; transition: background 0.2s; text-align:center;}
+.btn-orcamento:hover {background:#16a34a;}
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+  <header>
+    <div class="brand">
+      <div class="logo">JD</div>
+      <div>
+        <h1>JeanDesign</h1>
+        <p>Design de interiores e plantas digitais 2D/3D</p>
+      </div>
+    </div>
+    <nav>
+      <a class="ghost" href="#servicos">Serviços</a>
+      <a class="ghost" href="#contato">Contato</a>
+      <a class="btn" id="whatsLink" href="#">Fale no WhatsApp</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-card">
+        <h2>Transforme seus sonhos em projetos</h2>
+        <p>Modelagem em 2D e 3D, design de interiores, plantas digitais detalhadas e personalizadas.</p>
+      </div>
+
+      <aside class="card">
+        <h3>Serviços rápidos</h3>
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>Plantas 2D detalhadas</li>
+          <li>Modelagem 3D realista</li>
+          <li>Design de interiores personalizado</li>
+          <li>Consultoria online</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="servicos">
+      <h2 style="margin-bottom:12px">Serviços em destaque</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1586105251261-72a756497a11?auto=format&fit=crop&w=1200&q=60')"></div>
+          <strong>Plantas 2D</strong>
+          <p style="color:var(--muted)">Criação de plantas arquitetônicas digitais detalhadas.</p>
+          <a class="btn-orcamento" target="_blank" rel="noopener">faça aqui seu orçamento!</a>
+        </div>
+
+        <div class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=60')"></div>
+          <strong>Modelagem 3D</strong>
+          <p style="color:var(--muted)">Visualização em 3D realista de projetos e interiores.</p>
+          <a class="btn-orcamento" target="_blank" rel="noopener">faça aqui seu orçamento!</a>
+        </div>
+
+        <div class="card">
+          <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1600585154154-71293f3f8d47?auto=format&fit=crop&w=1200&q=60')"></div>
+          <strong>Design de Interiores</strong>
+          <p style="color:var(--muted)">Projetos de ambientes funcionais e sofisticados.</p>
+          <a class="btn-orcamento" target="_blank" rel="noopener">faça aqui seu orçamento!</a>
+        </div>
+      </div>
+    </section>
+
+ <section id="contato">
+  <div class="container" style="max-width:600px; margin:0 auto; padding:40px 20px;">
+    <h2 style="text-align:center; margin-bottom:30px;">Fale Conosco</h2>
+    <form id="formContato" class="contact-form" action="https://formspree.io/f/xeolejgk" method="POST" style="display:flex; flex-direction:column; gap:20px;">
+      
+      <div style="display:flex; flex-direction:column;">
+        <label for="nome" style="margin-bottom:5px; font-weight:bold;">Nome:</label>
+        <input type="text" id="nome" name="nome" required style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:5px;">
+      </div>
+      
+      <div style="display:flex; flex-direction:column;">
+        <label for="email" style="margin-bottom:5px; font-weight:bold;">E-mail:</label>
+        <input type="email" id="email" name="_replyto" required style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:5px;">
+      </div>
+      
+      <div style="display:flex; flex-direction:column;">
+        <label for="mensagem" style="margin-bottom:5px; font-weight:bold;">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5" required style="padding:10px; font-size:16px; border:1px solid #ccc; border-radius:5px;"></textarea>
+      </div>
+      
+      <button type="submit" style="padding:12px; font-size:16px; background-color:#4a2fff; color:white; border:none; border-radius:5px; cursor:pointer;">
+        Enviar
+      </button>
+    </form>
+    <p id="status" style="text-align:center; margin-top:15px;"></p>
+  </div>
+
+  <script>
+  (function(){
+    const form = document.getElementById('formContato');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault(); // previne envio padrão
+
+      const formData = new FormData(form);
+
+      // Envia os dados para o Formspree
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if(response.ok){
+          status.textContent = "Obrigado! Sua mensagem foi enviada com sucesso.";
+          status.style.color = "#22c55e"; // verde
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if(Object.hasOwn(data, 'errors')){
+              status.textContent = data["errors"].map(error => error.message).join(", ");
+            } else {
+              status.textContent = "Ops! Algo deu errado. Tente novamente.";
+            }
+            status.style.color = "#f87171"; // vermelho
+          });
+        }
+      }).catch(() => {
+        status.textContent = "Ops! Algo deu errado. Tente novamente.";
+        status.style.color = "#f87171";
+      });
+    });
+  })();
+  </script>
+</section>
+
+    <section style="margin-top:22px">
+      <h3>Depoimentos</h3>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+        <div class="card" style="min-width:220px;flex:1">"Projeto incrível, transformou meu apartamento." — Lucas R.</div>
+        <div class="card" style="min-width:220px;flex:1">"A planta 3D me ajudou a visualizar tudo antes da obra." — Marina S.</div>
+        <div class="card" style="min-width:220px;flex:1">"Atendimento rápido e profissional." — Carlos P.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="anoAtual"></span> JeanDesign — Todos os direitos reservados</div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <div class="pill">Telefone: (24) 99867-4067</div>
+      <a class="ghost" href="#contato">Suporte</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Atualiza ano
+document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
+// Link do WhatsApp no header
+(function(){
+  const phone = '5524998674067';
+  const headerLink = document.getElementById('whatsLink');
+  headerLink.href = `https://wa.me/${phone}?text=${encodeURIComponent('Olá, estou interessado em um dos seus serviços de design!')}`;
+})();
+
+// Botões de orçamento nos cards
+(function(){
+  const whatsappNumber = "5524998674067";
+  const defaultMessage = "Olá, estou interessado em um orçamento!";
+  const buttons = document.querySelectorAll(".btn-orcamento");
+  buttons.forEach(btn => {
+    btn.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  });
+})();
+
+// Formulário de contato
+document.getElementById('formContato').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nome = document.getElementById('nome').value.trim();
+  alert(`Obrigado, ${nome}! Recebemos sua mensagem e em breve entraremos em contato.`);
+  this.reset();
+});
+</script>
+</body>
+</html>
